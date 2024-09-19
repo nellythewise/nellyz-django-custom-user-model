@@ -52,7 +52,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [ 'first_name', 'middle_name', 'last_name']
+    REQUIRED_FIELDS = ('first_name', 'middle_name', 'last_name')
 
     def __str__(self):
         return "{} {} {}".format(self.first_name, self.middle_name, self.last_name)
